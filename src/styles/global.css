@@ -27,9 +27,19 @@ body
     color: #2E282A;
     background-color: #F1F1F1;
     padding-bottom: 30px; /* for footer comment */
+    --smallest-space: 2px;
 }
 
+
 @media(min-width: 320px) {
+  body {
+    --space-one: calc(var(--smallest-space) * 2);
+    --space-two: calc(var(--space-one) * 2);
+    --space-three: calc(var(--space-two) + var(--space-one));
+  }
+  span {
+    font-size: 0.75em;
+  }
   h1 {
     font-size: 1.5em;
   }
@@ -38,6 +48,14 @@ body
   }
 }
 @media(min-width: 600px) {
+  body {
+    --space-one: calc(var(--smallest-space) * 4);
+    --space-two: calc(var(--space-one) * 2);
+    --space-three: calc(var(--space-two) + var(--space-one));
+  }
+  span {
+    font-size: 1em;
+  }
   h1 {
     font-size: 2.5em;
   }
@@ -46,6 +64,11 @@ body
   }
 }
 @media(min-width: 800px) {
+  body {
+    --space-one: calc(var(--smallest-space) * 4);
+    --space-two: calc(var(--space-one) * 2);
+    --space-three: calc(var(--space-two) + var(--space-one));
+  }
   h1 {
     font-size: 4em;
   }

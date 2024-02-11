@@ -13,11 +13,13 @@ const Colors = {
   DarkerGrey: '#8C959F',
   LighterGrey: '#F6F6F6'
 }
-// card can be
-// rgba(140, 149, 159, 0.15) 0px 3px 6px 0px
-// border radius 0.75 vs 0.375 vs 0.1875
-// 8px padding (16 gap), 24 for containers
 
+const Spacing = {
+  S1: 'var(--space-one)',
+  S2: 'var(--space-two)',
+  S3: 'var(--space-three)',
+  S4: 'calc(var(--space-three) + var(--space-one))'
+}
 
 
 
@@ -35,7 +37,7 @@ const HeaderImageContainer = styled.div(() => ({
 const HorizontallyCenteredHeaderText = styled.h1((p) => ({
   position: 'absolute',
   // top: '18%',
-  top: '24px',
+  top: Spacing.S3,
   left: '50%',
   width: '100%',
   transform: 'translate(-50%, 0)',
@@ -49,27 +51,41 @@ const FooterContainer = styled.div(() => (
     border: `1px solid ${Colors.Grey}`,
     bottom: '0px',
     background: '#F1F1F1',
-    padding: '8px',
+    padding: Spacing.S1,
     width: '100%',
     display: 'flex',
-    justifyContent: 'center'
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 ))
+
+const FooterElement = styled.span(() => ({
+  padding: Spacing.S1,
+}))
+
+const FooterSeparater = styled.div(() => ({
+
+  height: Spacing.S4,
+  border: `1px solid ${Colors.Grey}`,
+  flexGrow: 1,
+  maxWidth: '1px'
+}))
 
 const BelowHeaderCardContainer = styled.div(() => ({
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'center',
   flexGrow: '1',
-  padding: '8px'
+  padding: Spacing.S1
 }))
 
 const BelowHeaderCardElementContainer = styled.div(() => ({
   borderRadius: '0.375em',
   border: `0.5px solid ${Colors.Grey}`,
   boxShadow: `${Colors.DarkerGrey} 0px 3px 6px 0px`,
-  padding: '16px',
-  margin: '16px',
+  padding: Spacing.S2,
+  margin: Spacing.S2,
   width: '30%',
   minHeight: '200px',
   ':hover': {
@@ -87,10 +103,17 @@ const BelowHeaderCard = (props: {
 }) => {
   return <BelowHeaderCardElementContainer>
     <h2>{props.header}</h2>
-    <div style={{ height: '100%', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-    <div style={{width: '40px'}}>
-    {props.icon}
-    </div>
+    <div style={{
+      height: '100%',
+      width: '100%',
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }}>
+      <div style={{ width: '40px' }}>
+        {props.icon}
+      </div>
     </div>
   </BelowHeaderCardElementContainer>
 }
@@ -116,9 +139,9 @@ const FullWidthHeader = () => {
 const BelowHeaderSection = () => {
   return <>
     <BelowHeaderCardContainer>
-      <BelowHeaderCard header={'View candidates for HOA Board'} icon={<StaticImage src="../images/people.svg" alt="image of a group of people"/>} />
-      <BelowHeaderCard header={'Check the HOA rules'} icon={<StaticImage src="../images/checklist.svg" alt="checklist"/>} />
-      <BelowHeaderCard header={'Frequently Asked Questions'} icon={<StaticImage src="../images/question.svg" alt="question mark"/>}/>
+      <BelowHeaderCard header={'HOA board candidates'} icon={<StaticImage src="../images/people.svg" alt="image of a group of people" />} />
+      <BelowHeaderCard header={'Check the HOA rules'} icon={<StaticImage src="../images/checklist.svg" alt="checklist" />} />
+      <BelowHeaderCard header={'Questions & Answers'} icon={<StaticImage src="../images/question.svg" alt="question mark" />} />
     </BelowHeaderCardContainer>
   </>
 }
@@ -127,13 +150,21 @@ const IndexPage: React.FC<PageProps> = () => {
   return <>
     <FullWidthHeader />
     <BelowHeaderCardContainer>
-      <h2 color={Colors.DarkerGrey} style={{fontStyle: 'italic', marginTop: '16px'}}>{'Site under construction, links may not work'}</h2>
+      <h2 color={Colors.DarkerGrey} style={{ fontStyle: 'italic', marginTop: Spacing.S2 }}>{'Site under construction, links may not work'}</h2>
     </BelowHeaderCardContainer>
     <BelowHeaderSection />
     <FooterContainer>
-      This site does not use cookies &nbsp;| &nbsp;
-      <a href="https://www.facebook.com/groups/485492819357906">Connect with other residents on Facebook</a> &nbsp;| &nbsp;
-      <a href="https://github.com/Sammons/streets-of-caledonia-info/issues">Provide website feedback on GitHub</a>
+      <FooterElement>
+        This site does not use cookies
+      </FooterElement>
+      <FooterSeparater/>
+      <FooterElement>
+        <a href="https://www.facebook.com/groups/485492819357906">Connect with other residents on Facebook</a>
+      </FooterElement>
+      <FooterSeparater/>
+      <FooterElement>
+        <a href="https://github.com/Sammons/streets-of-caledonia-info/issues">Provide website feedback on GitHub</a>
+      </FooterElement>
     </FooterContainer>
   </>
 }
