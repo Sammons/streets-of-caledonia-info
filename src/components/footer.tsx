@@ -30,7 +30,7 @@ const FooterSeparater = styled.div(() => ({
   maxWidth: '1px'
 }))
 
-
+export const GitHubLink = 'https://github.com/Sammons/streets-of-caledonia-info';
 
 export const Footer = () => <FooterContainer>
   <FooterElement>
@@ -42,6 +42,6 @@ export const Footer = () => <FooterContainer>
   </FooterElement>
   <FooterSeparater />
   <FooterElement>
-    <a href="https://github.com/Sammons/streets-of-caledonia-info/issues">Provide website feedback on GitHub</a>
+    <a href={`${GitHubLink}issues`}>Provide website feedback on GitHub</a>
   </FooterElement>
 </FooterContainer>

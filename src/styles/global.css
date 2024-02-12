@@ -46,6 +46,9 @@ body
   h2 {
     font-size: 1em;
   }
+  h3 {
+    font-size: 0.9em;
+  }
 }
 @media(min-width: 600px) {
   body {
@@ -62,6 +65,9 @@ body
   h2 {
     font-size: 1.5em;
   }
+  h3 {
+    font-size: 1.3em;
+  }
 }
 @media(min-width: 800px) {
   body {
@@ -74,5 +80,8 @@ body
   }
   h2 {
     font-size: 1.5em;
+  }
+  h3 {
+    font-size: 1.3em;
   }
 }
