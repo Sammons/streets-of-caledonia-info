@@ -1,11 +1,12 @@
 import * as React from "react"
 import '../../styles/global.css'
-import { Link, type HeadFC, type PageProps } from "gatsby"
+import { Link, type HeadFC, type PageProps, navigate } from "gatsby"
 import styled from '@emotion/styled'
 import { StaticImage } from "gatsby-plugin-image"
 import { Colors, Spacing } from "../../constants/constants"
 import { Footer } from "../../components/footer"
 import { HomeIcon } from "../../components/home-icon"
+import { kebabCase } from "lodash"
 
 
 
@@ -39,7 +40,7 @@ const TopOfPageHeader = () => {
   </>
 }
 
-const CandidateListItem = styled.li(() => ({
+const CandidateListItemStyled = styled.li(() => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -58,6 +59,17 @@ const CandidateListItem = styled.li(() => ({
   }
 }))
 
+function normalizeName(name: string) {
+  return kebabCase(name).toLowerCase()
+}
+
+const CandidateListItem = (props: React.PropsWithChildren<{name: string}>) => {
+  return <CandidateListItemStyled onClick={() => navigate('details/' + normalizeName(props.name))}>
+    {props.children}
+    <h2 style={{ marginTop: Spacing.S1 }}>{props.name}</h2>
+  </CandidateListItemStyled>
+}
+
 
 const Candidates = () => {
   return <>
@@ -70,39 +82,32 @@ const Candidates = () => {
       marginTop: Spacing.S3
     }}>
       <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
-        <CandidateListItem>
-          <StaticImage src={'../../images/photos-of-candidates/sammons.png'} alt={`Photo of Ben Sammons`} width={128} aspectRatio={1} />
-          <h2 style={{ marginTop: Spacing.S1 }}>{'Ben Sammons'}</h2>
+        <CandidateListItem name='Ben Sammons'>
+          <StaticImage src={'../../images/photos-of-candidates/sammons.png'} alt={`Photo of candidate`} width={128} aspectRatio={1} />
         </CandidateListItem>
 
-        <CandidateListItem>
+        <CandidateListItem name='Eric Tillotson'>
           <StaticImage src={'../../images/placeholder-photo.svg'} alt={`Placeholder Photo`} width={128} aspectRatio={1} />
-          <h2 style={{ marginTop: Spacing.S1 }}>{'Eric Tillotson'}</h2>
         </CandidateListItem>
 
-        <CandidateListItem>
+        <CandidateListItem name='Phanindra Phanakanti'>
           <StaticImage src={'../../images/placeholder-photo.svg'} alt={`Placeholder Photo`} width={128} aspectRatio={1} />
-          <h2 style={{ marginTop: Spacing.S1 }}>{'Phanindra Phanakanti'}</h2>
         </CandidateListItem>
 
-        <CandidateListItem>
+        <CandidateListItem name='Matthew Markillie'>
           <StaticImage src={'../../images/placeholder-photo.svg'} alt={`Placeholder Photo`} width={128} aspectRatio={1} />
-          <h2 style={{ marginTop: Spacing.S1 }}>{'Matthew Markillie'}</h2>
         </CandidateListItem>
 
-        <CandidateListItem>
+        <CandidateListItem name='Sanjay Kumar Patel'>
           <StaticImage src={'../../images/placeholder-photo.svg'} alt={`Placeholder Photo`} width={128} aspectRatio={1} />
-          <h2 style={{ marginTop: Spacing.S1 }}>{'Sanjay Kumar Patel'}</h2>
         </CandidateListItem>
 
-        <CandidateListItem>
+        <CandidateListItem name='Zack Summers'>
           <StaticImage src={'../../images/placeholder-photo.svg'} alt={`Placeholder Photo`} width={128} aspectRatio={1} />
-          <h2 style={{ marginTop: Spacing.S1 }}>{'Zack Summers'}</h2>
         </CandidateListItem>
 
-        <CandidateListItem>
+        <CandidateListItem name='Louis Terbrock'>
           <StaticImage src={'../../images/placeholder-photo.svg'} alt={`Placeholder Photo`} width={128} aspectRatio={1} />
-          <h2 style={{ marginTop: Spacing.S1 }}>{'Louis Terbrock'}</h2>
         </CandidateListItem>
       </ul>
     </div>
