@@ -83,7 +83,7 @@ export const CandidatePage = (props: {
   comments: string
 }) => {
   return <>
-    <BackIcon />
+    <BackIcon to="/candidates" />
     <TopOfPageHeader name={props.name} />
     <h2 style={{ textAlign: 'center', fontStyle: 'italic' }}>
       Details are from the candidate mail packet. *

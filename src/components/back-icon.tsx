@@ -8,7 +8,7 @@ import { navigate } from 'gatsby-link'
 const BackButton = styled.div(() => ({
   position: 'fixed',
   top: Spacing.S2,
-  left: '0px',
+  left: Spacing.S2,
 }))
 
 const BackButtonHoverContainer = styled.div(() => ({

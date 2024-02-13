@@ -7,8 +7,8 @@ import { navigate } from 'gatsby-link'
 
 const BackButton = styled.div(() => ({
   position: 'fixed',
-  top: '0px',
-  left: '0px',
+  top: Spacing.S1,
+  left: Spacing.S1,
   // transform: 'translate(0, 50%)'
 }))
 
