@@ -6,9 +6,9 @@ import { CandidatePage } from "../../../components/candidates/details/candidate-
 
 const candidateInfo = {
   name: "Louis Terbrock",
-  edu: "",
-  background: "",
-  comments: "No info sheet included",
+  edu: "BS of Math and Science in Civil Engineering, University of Missouri",
+  background: "Born and raised in the St. Louis area. Live in the neighborhood with my wife and two sons. Worked in construction at Alberici for all 12 years of my professional career.",
+  comments: "I believe my background in construction management and passion for making the neighborhood the best it can be would serve me well for this board seat.",
   image: '../../../images/placeholder-photo.svg'
 }
 
