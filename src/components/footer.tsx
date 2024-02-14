@@ -42,6 +42,6 @@ export const Footer = () => <FooterContainer>
   </FooterElement>
   <FooterSeparater />
   <FooterElement>
-    <a href={`${GitHubLink}issues`}>Provide website feedback on GitHub</a>
+    <a href={`${GitHubLink}/issues`}>Provide website feedback on GitHub</a>
   </FooterElement>
 </FooterContainer>
