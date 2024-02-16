@@ -95,7 +95,7 @@ const Candidates = () => {
         </CandidateListItem>
 
         <CandidateListItem name='Matthew Markillie'>
-          <StaticImage src={'../../images/placeholder-photo.svg'} alt={`Placeholder Photo`} width={128} aspectRatio={1} />
+          <StaticImage src={'../../images/photos-of-candidates/markille.jpeg'} alt={`Photo of candidate`} width={128} aspectRatio={1} />
         </CandidateListItem>
 
         <CandidateListItem name='Sanjay Kumar Patel'>
