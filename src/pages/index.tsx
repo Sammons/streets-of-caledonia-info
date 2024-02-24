@@ -48,7 +48,7 @@ const BelowHeaderCardContainer = styled.div(() => ({
   flexDirection: 'row',
   justifyContent: 'center',
   flexGrow: '1',
-  padding: Spacing.S1
+  margin: Spacing.S2
 }))
 
 const BelowHeaderCardElementContainer = styled.div(() => ({
@@ -56,7 +56,9 @@ const BelowHeaderCardElementContainer = styled.div(() => ({
   border: `0.5px solid ${Colors.Grey}`,
   boxShadow: `${Colors.DarkerGrey} 0px 3px 6px 0px`,
   padding: Spacing.S2,
-  margin: Spacing.S2,
+  margin: Spacing.S1,
+  marginLeft: Spacing.S2,
+  marginRight: Spacing.S2,
   width: '30%',
   minHeight: '200px',
   ':hover': {
@@ -100,13 +102,38 @@ const BelowHeaderSection = () => {
   </>
 }
 
+const ButtonStyledLink = styled('a')(() => ({
+  backgroundColor: Colors.Green,
+  color: Colors.LighterGrey,
+  fontWeight: 'bold',
+  fontSize: '120%',
+  border: `1px solid ${Colors.LighterGrey}`,
+  borderRadius: '0.375em',
+  width: 'fit-content',
+  textAlign: 'center',
+  padding: Spacing.S2,
+  textDecoration: 'none',
+  ':hover': {
+    cursor: 'pointer'
+  },
+  ':active': {
+    opacity: '90%'
+  },
+  ':disabled': {
+    opacity: '50%'
+  }
+}))
+
 const LandingPage: React.FC<PageProps> = () => {
   return <>
     <FullWidthHeader />
-    <BelowHeaderCardContainer>
+    {/* <BelowHeaderCardContainer>
       <h2 color={Colors.DarkerGrey} style={{ fontStyle: 'italic', marginTop: Spacing.S2 }}>{'Site under construction, links may not work'}</h2>
-    </BelowHeaderCardContainer>
+    </BelowHeaderCardContainer> */}
     <BelowHeaderSection />
+    <BelowHeaderCardContainer>
+      <ButtonStyledLink href="https://docs.google.com/forms/d/e/1FAIpQLSeallwAB4I-KIIcgm_SLR_jxCHb9FiN07h6lmlfZW1l5WksKA/viewform?usp=sf_link">Signup for updates</ButtonStyledLink> 
+    </BelowHeaderCardContainer>
     <Footer/>
   </>
 }
