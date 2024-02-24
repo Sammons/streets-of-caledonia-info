@@ -55,18 +55,19 @@ const BelowHeaderCardElementContainer = styled.div(() => ({
   borderRadius: '0.375em',
   border: `0.5px solid ${Colors.Grey}`,
   boxShadow: `${Colors.DarkerGrey} 0px 3px 6px 0px`,
-  padding: Spacing.S2,
+  padding: Spacing.S3,
   margin: Spacing.S1,
   marginLeft: Spacing.S2,
   marginRight: Spacing.S2,
-  width: '30%',
-  minHeight: '200px',
+  flexBasis: '100%',
+  maxWidth: 'min(30%, 300px)',
   ':hover': {
     borderColor: Colors.Black,
     cursor: 'pointer'
   },
   display: 'flex',
-  flexDirection: 'column'
+  flexDirection: 'column',
+  flexFlow: 'column-reverse',
 }))
 
 const BelowHeaderCard = (props: {
@@ -76,14 +77,13 @@ const BelowHeaderCard = (props: {
 
 }) => {
   return <BelowHeaderCardElementContainer onClick={() => navigate(props.linkTo)}>
-    <h2 style={{width: '100%', textAlign: 'center'}}>{props.header}</h2>
+    <h2 style={{width: '100%', textAlign: 'center', paddingTop: Spacing.S2}}>{props.header}</h2>
     <div style={{
       height: '100%',
-      width: '100%',
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'center',
-      alignItems: 'center',
+      alignItems: 'flex-start',
     }}>
       <div style={{ width: '40px' }}>
         {props.icon}
