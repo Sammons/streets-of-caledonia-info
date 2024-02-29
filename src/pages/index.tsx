@@ -130,6 +130,9 @@ const LandingPage: React.FC<PageProps> = () => {
     {/* <BelowHeaderCardContainer>
       <h2 color={Colors.DarkerGrey} style={{ fontStyle: 'italic', marginTop: Spacing.S2 }}>{'Site under construction, links may not work'}</h2>
     </BelowHeaderCardContainer> */}
+    <BelowHeaderCardContainer>
+      <h2><b>Please vote!</b> fill your <a href="BallotAndProxy.pdf">Ballot & Proxy</a> and email or fax to <a href="helpdesk@omni-management.com">Omni</a></h2>
+    </BelowHeaderCardContainer>
     <BelowHeaderSection />
     <BelowHeaderCardContainer>
       <ButtonStyledLink href="https://docs.google.com/forms/d/e/1FAIpQLSeallwAB4I-KIIcgm_SLR_jxCHb9FiN07h6lmlfZW1l5WksKA/viewform?usp=sf_link">Signup for updates</ButtonStyledLink> 
