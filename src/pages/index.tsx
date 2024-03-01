@@ -131,7 +131,7 @@ const LandingPage: React.FC<PageProps> = () => {
       <h2 color={Colors.DarkerGrey} style={{ fontStyle: 'italic', marginTop: Spacing.S2 }}>{'Site under construction, links may not work'}</h2>
     </BelowHeaderCardContainer> */}
     <BelowHeaderCardContainer>
-      <h2><b>Please vote!</b> fill your <a href="BallotAndProxy.pdf">Ballot & Proxy</a> and email or fax to <a href="helpdesk@omni-management.com">Omni</a></h2>
+      <h2><b>Please vote!</b> fill your <a href="BallotAndProxy.pdf">Ballot & Proxy</a> and email or fax to <a href="mailto:helpdesk@omni-management.com">helpdesk@omni-management.com</a></h2>
     </BelowHeaderCardContainer>
     <BelowHeaderSection />
     <BelowHeaderCardContainer>
