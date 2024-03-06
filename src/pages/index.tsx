@@ -95,7 +95,6 @@ const BelowHeaderCard = (props: {
 const BelowHeaderSection = () => {
   return <>
     <BelowHeaderCardContainer>
-      <BelowHeaderCard linkTo="/candidates" header={'HOA board candidates'} icon={<StaticImage src="../images/people.svg" alt="image of a group of people" />} />
       <BelowHeaderCard linkTo="/hoa-rule-helper" header={'HOA rule helper'} icon={<StaticImage src="../images/checklist.svg" alt="checklist" />} />
       <BelowHeaderCard linkTo="/faq" header={'Questions & Answers'} icon={<StaticImage src="../images/question.svg" alt="question mark" />} />
     </BelowHeaderCardContainer>
@@ -127,15 +126,9 @@ const ButtonStyledLink = styled('a')(() => ({
 const LandingPage: React.FC<PageProps> = () => {
   return <>
     <FullWidthHeader />
-    {/* <BelowHeaderCardContainer>
-      <h2 color={Colors.DarkerGrey} style={{ fontStyle: 'italic', marginTop: Spacing.S2 }}>{'Site under construction, links may not work'}</h2>
-    </BelowHeaderCardContainer> */}
-    <BelowHeaderCardContainer>
-      <h2><b>Please vote!</b> fill your <a href="BallotAndProxy.pdf">Ballot & Proxy</a> and email or fax to <a href="mailto:helpdesk@omni-management.com">helpdesk@omni-management.com</a></h2>
-    </BelowHeaderCardContainer>
     <BelowHeaderSection />
     <BelowHeaderCardContainer>
-      <ButtonStyledLink href="https://docs.google.com/forms/d/e/1FAIpQLSeallwAB4I-KIIcgm_SLR_jxCHb9FiN07h6lmlfZW1l5WksKA/viewform?usp=sf_link">Signup for updates</ButtonStyledLink> 
+      <ButtonStyledLink href="https://docs.google.com/forms/d/e/1FAIpQLSeallwAB4I-KIIcgm_SLR_jxCHb9FiN07h6lmlfZW1l5WksKA/viewform?usp=sf_link">Signup to connect with the community</ButtonStyledLink> 
     </BelowHeaderCardContainer>
     <Footer/>
   </>
