@@ -169,7 +169,7 @@ const BotInteraction = () => {
     {botText && <OutputTextStyled>{botText}</OutputTextStyled>}
     <br/>
     {botAnnotationText && 
-      botAnnotationText.map((annotation, i) => <OutputTextStyled key={i}><b>Annotation {i+1}:</b> {annotation.file_citation.quote}</OutputTextStyled>)
+      botAnnotationText.map((annotation, i) => <OutputTextStyled key={i}><b>Annotation {i+1}:</b> <i>Sorry OpenAI has removed quotations</i> </OutputTextStyled>)
     }
   </>
 }
